@@ -23,7 +23,7 @@ Mobile.tap(findTestObject('Object Repository/Purchase/android.widget.ImageView')
 
 Mobile.tap(findTestObject('Object Repository/Purchase/android.widget.LinearLayout'), 0)
 
-Mobile.setText(findTestObject('Object Repository/Purchase/android.widget.EditText'), name, 0)
+Mobile.setText(findTestObject('Object Repository/Purchase/android.widget.EditText'), username, 0)
 
 Mobile.setText(findTestObject('Object Repository/Purchase/android.widget.EditText (1)'), password, 0)
 
@@ -34,13 +34,12 @@ Mobile.tap(findTestObject('Object Repository/Purchase/android.widget.Button - NO
 Mobile.tap(findTestObject('Object Repository/Purchase/android.widget.ImageView'), 0)
 
 if (Mobile.verifyElementExist(findTestObject('Object Repository/Purchase/android.widget.TextView - airlangga'), 5)) {
-	String userName = Mobile.getText(findTestObject('Object Repository/Login/android.widget.TextView - airlangga'), 0)
+	String userName = Mobile.getText(findTestObject('null'), 0)
 	
 	assert userName == name
 } else {
 	assert false
 }
-
 
 Mobile.tap(findTestObject('Object Repository/Purchase/android.widget.TextView - LAPTOPS'), 0)
 

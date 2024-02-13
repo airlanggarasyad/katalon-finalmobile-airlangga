@@ -23,9 +23,9 @@ Mobile.tap(findTestObject('Object Repository/Login/android.widget.ImageView'), 0
 
 Mobile.tap(findTestObject('Object Repository/Login/android.widget.LinearLayout'), 0)
 
-Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText'), 'airlangga', 0)
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText'), username, 0)
 
-Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (1)'), '1234Abc', 0)
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (1)'), password, 0)
 
 Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - LOGIN'), 0)
 
@@ -33,9 +33,13 @@ Mobile.tap(findTestObject('Object Repository/Login/android.widget.Button - NO'),
 
 Mobile.tap(findTestObject('Object Repository/Login/android.widget.ImageView'), 0)
 
-String userName = Mobile.getText(findTestObject('Object Repository/Login/android.widget.TextView - airlangga'), 0)
-
-assert userName == 'airlangga'
+if (Mobile.verifyElementExist(findTestObject('Object Repository/Login/android.widget.TextView - airlangga'), 5)) {
+	String currentUsername = Mobile.getText(findTestObject('Object Repository/Login/android.widget.TextView - airlangga'), 0)
+	
+	assert currentUsername == username
+} else {
+	assert false
+}
 
 Mobile.closeApplication()
 
